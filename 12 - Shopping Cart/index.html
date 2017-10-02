@@ -55,9 +55,13 @@
    
    <script>
       $("button").on("click", function(){
+         var p = $(this).siblings("img").position();
+         
          $(this).closest("li")
          .find("img")
          .clone()
+         .css('top', p.top)
+         .css('left', p.left)
          .addClass("zoom")
          .appendTo("body");
          
